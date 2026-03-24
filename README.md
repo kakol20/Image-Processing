@@ -1,2 +1,2 @@
-# Visual Studio Template - Console 
-Visual Studio Template
+# Image-Processing
+Image-Processing Template
