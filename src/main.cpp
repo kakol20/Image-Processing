@@ -1,8 +1,14 @@
-#include <iostream>
+#include "image/Image.h"
+#include "misc/Log.h"
+#include <cstdlib>
 
 int main(int argc, char* argv[]) {
-	std::cout << "Hello World!\n";
-	std::cin.ignore();
+	Log::WriteOneLine("Hello World!");
+	
+	Image img(256, 256, 3);
+	img.Write("test.png");
 
-	return 0;
+	Log::Save();
+
+	return EXIT_SUCCESS;
 }
