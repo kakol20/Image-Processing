@@ -11,7 +11,7 @@
 #include "../../ext/stb/stb_image.h"
 #include "../../ext/stb/stb_image_write.h"
 
-#include "../misc/Log.h"
+#include "../wrapper/Log.h"
 
 Image::Image() {
 	m_h = 0;
@@ -107,16 +107,17 @@ bool Image::Read(const char* file, const int forceChannels) {
 		m_data = stbi_load(file, &m_w, &m_h, &m_channels, 0);
 	}
 
+	Log::StartLine();
 	if (m_data != NULL) {
-		Log::WriteOneLine("Read success ");
+		Log::Write("Read success ");
 	} else {
-		Log::WriteOneLine("Read failed ");
+		Log::Write("Read failed ");
 	}
 
 	m_size = (size_t)(m_w * m_h * m_channels);
 
-	Log::WriteOneLine(file);
-	//Log::EndLine();
+	Log::Write(file);
+	Log::EndLine();
 
 	return m_data != NULL;
 }

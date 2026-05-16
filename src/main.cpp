@@ -1,5 +1,5 @@
 #include "image/Image.h"
-#include "misc/Log.h"
+#include "wrapper/Log.h"
 #include <cstdlib>
 
 int main(int argc, char* argv[]) {
